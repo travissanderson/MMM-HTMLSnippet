@@ -33,7 +33,7 @@ Module.register("MMM-HTMLSnippet",{
 
 	getDom: function() {
 		let self = this
-		var wrapper = document.createElement("iframe")
+		var wrapper = document.createElement("div")
 		wrapper.id = "HTMLSNIPPET-" + self.config.ident 
 		wrapper.className = "htmlsnippet module"
 		wrapper.style.width = self.config.width
@@ -41,10 +41,11 @@ Module.register("MMM-HTMLSnippet",{
 		wrapper.style.border = "none"
 		wrapper.style.display = "block"
 		wrapper.style.overflow = "hidden"
+		wrapper.style.margin = "0"
 		wrapper.style.backgroundColor = self.config.backgroundColor
 		wrapper.style.color = self.config.color
 		wrapper.scrolling = "no"
-		wrapper.src = '/HTMLSNIPPET-' + self.config.ident
+		wrapper.innerHTML = self.config.html
 
 		return wrapper
 	},
