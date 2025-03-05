@@ -50,7 +50,7 @@ Module.register("MMM-HTMLSnippet", {
             div.style.color = this.config.color;
             div.scrolling = "no";
 
-            div.innerHTML = self.config.html;
+            div.innerHTML = this.config.frames[i].html;
             wrapper.appendChild(div);
         }
         // done
